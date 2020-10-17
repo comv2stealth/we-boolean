@@ -11,11 +11,11 @@ def on_press(key):
     finally:
         file1.close()
 
-def on_release(key):
-    print('{0} released'.format(key))
-    if key == keyboard.Key.esc:
-        # Stop listener
-        return False
+#def on_release(key):
+#    print('{0} released'.format(key))
+#    if key == keyboard.Key.esc:
+#        # Stop listener
+#        return False
 
 def clearFile():
     file1 = open("Log.txt","w")
