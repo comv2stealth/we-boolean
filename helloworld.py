@@ -1,12 +1,13 @@
-f1 = open("log.txt", "r")
+f1 = open("Log.txt", "r")
 list1 = []
 for line in f1:
-   list1.append(line)
+   list1.append(line.rstrip())
 
 import string
 values = dict()
 for index, letter in enumerate(string.ascii_lowercase):
-   values[letter] = list1.count(letter) + list1.count(letter.upper())
+   values[index] = list1.count(letter) + list1.count(letter.upper())
+
 
 def split(word): 
     return [char for char in word]
@@ -35,9 +36,11 @@ words = dict()
 dictmap = dict()
 
 for x in f:
-    listx = getProbability(x)
-    val = dot(listx, values[x])
-    dictmap[x] = val
+   val = 0
+   listx = getProbability(x)
+   for i in range (26):
+      val = val + listx[i]*values[i]
+   dictmap[x] = val
 
 
 
